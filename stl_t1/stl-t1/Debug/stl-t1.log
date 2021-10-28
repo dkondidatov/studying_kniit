@@ -1,2 +1,4 @@
-﻿  stl-t2-6.cpp
+﻿  stl-t1-13.cpp
+C:\Users\kdo\source\repos\studying_kniit\stl_t1\stl-t1\stl-t1-13.cpp(88,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kdo\source\repos\studying_kniit\stl_t1\stl-t1\stl-t1-13.cpp(96,23): warning C4018: '<': signed/unsigned mismatch
   stl-t1.vcxproj -> C:\Users\kdo\source\repos\studying_kniit\stl_t1\stl-t1\Debug\stl-t1.exe
