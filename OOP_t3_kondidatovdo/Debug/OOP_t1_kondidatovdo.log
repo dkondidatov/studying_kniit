@@ -1,3 +1,13 @@
-﻿  task_1_16.cpp
-C:\Users\kdo\source\repos\studying_kniit\OOP_t1_kondidatovdo\task_1_16.cpp(26,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  OOP_t1_kondidatovdo.vcxproj -> C:\Users\kdo\source\repos\studying_kniit\OOP_t1_kondidatovdo\Debug\OOP_t1_kondidatovdo.exe
+﻿  task_3_16.cpp
+C:\Users\kdo\source\repos\studying_kniit\OOP_t3_kondidatovdo\task_3_16.cpp(11,33): warning C4566: character represented by universal-character-name '\u041F' cannot be represented in the current code page (1252)
+C:\Users\kdo\source\repos\studying_kniit\OOP_t3_kondidatovdo\task_3_16.cpp(11,33): warning C4566: character represented by universal-character-name '\u0440' cannot be represented in the current code page (1252)
+C:\Users\kdo\source\repos\studying_kniit\OOP_t3_kondidatovdo\task_3_16.cpp(11,33): warning C4566: character represented by universal-character-name '\u043E' cannot be represented in the current code page (1252)
+C:\Users\kdo\source\repos\studying_kniit\OOP_t3_kondidatovdo\task_3_16.cpp(11,33): warning C4566: character represented by universal-character-name '\u0447' cannot be represented in the current code page (1252)
+C:\Users\kdo\source\repos\studying_kniit\OOP_t3_kondidatovdo\task_3_16.cpp(11,33): warning C4566: character represented by universal-character-name '\u0430' cannot be represented in the current code page (1252)
+C:\Users\kdo\source\repos\studying_kniit\OOP_t3_kondidatovdo\task_3_16.cpp(11,33): warning C4566: character represented by universal-character-name '\u044F' cannot be represented in the current code page (1252)
+C:\Users\kdo\source\repos\studying_kniit\OOP_t3_kondidatovdo\task_3_16.cpp(11,33): warning C4566: character represented by universal-character-name '\u0448' cannot be represented in the current code page (1252)
+C:\Users\kdo\source\repos\studying_kniit\OOP_t3_kondidatovdo\task_3_16.cpp(11,33): warning C4566: character represented by universal-character-name '\u0438' cannot be represented in the current code page (1252)
+C:\Users\kdo\source\repos\studying_kniit\OOP_t3_kondidatovdo\task_3_16.cpp(11,33): warning C4566: character represented by universal-character-name '\u0431' cannot be represented in the current code page (1252)
+C:\Users\kdo\source\repos\studying_kniit\OOP_t3_kondidatovdo\task_3_16.cpp(11,33): warning C4566: character represented by universal-character-name '\u043A' cannot be represented in the current code page (1252)
+C:\Users\kdo\source\repos\studying_kniit\OOP_t3_kondidatovdo\task_3_16.cpp(45,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  OOP_t1_kondidatovdo.vcxproj -> C:\Users\kdo\source\repos\studying_kniit\OOP_t3_kondidatovdo\Debug\OOP_t1_kondidatovdo.exe
