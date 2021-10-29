@@ -1,0 +1,15 @@
+'task_2_kondidatovDO.exe' (Win32): Loaded 'C:\Users\kdo\source\repos\studying_kniit\task_2_kondidatovDO\Debug\task_2_kondidatovDO.exe'. Symbols loaded.
+'task_2_kondidatovDO.exe' (Win32): Loaded 'C:\Windows\SysWOW64\ntdll.dll'. 
+'task_2_kondidatovDO.exe' (Win32): Loaded 'C:\Windows\SysWOW64\kernel32.dll'. 
+'task_2_kondidatovDO.exe' (Win32): Loaded 'C:\Windows\SysWOW64\KernelBase.dll'. 
+'task_2_kondidatovDO.exe' (Win32): Loaded 'C:\Windows\SysWOW64\msvcp140d.dll'. 
+'task_2_kondidatovDO.exe' (Win32): Loaded 'C:\Windows\SysWOW64\vcruntime140d.dll'. 
+'task_2_kondidatovDO.exe' (Win32): Loaded 'C:\Windows\SysWOW64\ucrtbased.dll'. 
+The thread 0x9024 has exited with code 0 (0x0).
+'task_2_kondidatovDO.exe' (Win32): Loaded 'C:\Windows\SysWOW64\sechost.dll'. 
+'task_2_kondidatovDO.exe' (Win32): Loaded 'C:\Windows\SysWOW64\rpcrt4.dll'. 
+'task_2_kondidatovDO.exe' (Win32): Loaded 'C:\Windows\SysWOW64\kernel.appcore.dll'. 
+'task_2_kondidatovDO.exe' (Win32): Loaded 'C:\Windows\SysWOW64\msvcrt.dll'. 
+The thread 0x2af4 has exited with code 0 (0x0).
+The thread 0x1b64 has exited with code 0 (0x0).
+The program '[29284] task_2_kondidatovDO.exe' has exited with code 0 (0x0).
