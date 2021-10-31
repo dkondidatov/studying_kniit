@@ -42,8 +42,8 @@ namespace Custom {
 		bool is_empty = true;
 		int basic_income = 0;
 
-		float calculate_income() {
-			return round((basic_income * productivity) * 100) / 100;
+		int calculate_income() {
+			return (int)(basic_income * productivity);
 
 		}
 		float rnd_between(float smallNumber, float bigNumber) {
