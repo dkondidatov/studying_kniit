@@ -31,4 +31,6 @@
 *.out
 *.app
 
+#.vs dir
+/.vs
 Browse.VC.opendb
