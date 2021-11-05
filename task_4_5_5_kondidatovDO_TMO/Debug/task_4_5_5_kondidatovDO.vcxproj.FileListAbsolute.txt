@@ -1,4 +1,0 @@
-C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\Debug\task_4_5_5_kondidatovDO.vcxproj.AssemblyReference.cache
-C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\Debug\task_4_5_5_kondidatovDO.exe
-C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\Debug\task455kondidatovDO.MyForm.resources
-C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\Debug\task_4_5_5_kondidatovDO.vcxproj.GenerateResource.cache
