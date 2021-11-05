@@ -1,0 +1,17 @@
+﻿  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
+  MyForm.cpp
+C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\animals.h(65,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\animals.h(80,1): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\animals.h(84,1): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\animals.h(88,1): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\animals.h(103,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\animals.h(119,1): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\animals.h(123,1): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\animals.h(127,1): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\animals.h(142,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\animals.h(158,1): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\animals.h(162,1): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\animals.h(166,1): warning C4305: 'argument': truncation from 'double' to 'float'
+  Generating Code...
+  MyForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  task_4_5_5_kondidatovDO.vcxproj -> C:\Users\kdo\source\repos\studying_kniit\task_4_5_5_kondidatovDO\Debug\task_4_5_5_kondidatovDO.exe

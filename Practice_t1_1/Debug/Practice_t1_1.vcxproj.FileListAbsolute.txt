@@ -1,0 +1,4 @@
+C:\Users\kdo\source\repos\studying_kniit\Practice_t1_1\Debug\Practice_t1_1.vcxproj.AssemblyReference.cache
+C:\Users\kdo\source\repos\studying_kniit\Practice_t1_1\Debug\Practicet11.Practice_main_window.resources
+C:\Users\kdo\source\repos\studying_kniit\Practice_t1_1\Debug\Practice_t1_1.vcxproj.GenerateResource.cache
+C:\Users\kdo\source\repos\studying_kniit\Practice_t1_1\Debug\Practice_t1_1.exe
