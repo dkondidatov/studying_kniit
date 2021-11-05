@@ -32,5 +32,5 @@
 *.app
 
 #.vs dir
-.vs/**
-Browse.VC.opendb
+.vs/
+#Browse.VC.opendb
