@@ -51,18 +51,20 @@ namespace Custom
         }
         return result;
     };
-
-    //Calculation factorial
-    int calculate_factorial(int to_calculate) {
-        int factorial;
-        int sum = 0;
-        for (int i = 1; i <= to_calculate; i++) {
-            factorial = 1;
-            for (int j = 1; j <= i; j++) {
-                factorial = factorial * j;
-            }
-            sum += factorial;
+    
+    int calculate_factorial(int to_calculate) { // A(n) = A(n-1) + (A(n-1) - A(n-2)) * n
+        int A_1;
+        int A_2;        
+        if (to_calculate <= 1) {
+            return 1;
         }
-        return sum;
+        else if (to_calculate == 2) {
+            return 3;
+        }
+        else {
+            A_1 = calculate_factorial(to_calculate - 1);
+            A_2 = calculate_factorial(to_calculate - 2);
+            return A_1 + (A_1 - A_2) * to_calculate;
+        }
     }
 }
