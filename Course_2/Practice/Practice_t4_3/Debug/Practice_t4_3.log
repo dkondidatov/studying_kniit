@@ -1,0 +1,6 @@
+﻿  Practice_t4_3.cpp
+C:\Users\kdo\source\repos\studying_kniit\Course_2\Practice\Practice_t4_3\Practice_t4_3.h(293,1): warning C4965: implicit box of integer 0; use nullptr or explicit cast
+C:\Users\kdo\source\repos\studying_kniit\Course_2\Practice\Practice_t4_3\Practice_t4_3.h(335,1): warning C4965: implicit box of integer 0; use nullptr or explicit cast
+C:\Users\kdo\source\repos\studying_kniit\Course_2\Practice\Practice_t4_3\Practice_t4_3.h(339,1): warning C4965: implicit box of integer 0; use nullptr or explicit cast
+  Practice_t4_3.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Practice_t4_3.vcxproj -> C:\Users\kdo\source\repos\studying_kniit\Course_2\Practice\Practice_t4_3\Debug\Practice_t4_3.exe
