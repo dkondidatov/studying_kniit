@@ -44,7 +44,26 @@ namespace Custom
         return result;
     };
     
-    System::String^ validate_cell_value(System::String^ input, bool& valid_input) {
+    System::String^ validate_value(System::String^ input, int& value, bool& valid_input) {
+        int tmp_value;
+        System::String^ result = "";
+        try {
+            if (System::Int32::TryParse(input, tmp_value)) //Trying to parse string to int. If input is not int throw NotIntegerValueException
+            {
+                value = tmp_value;
+                valid_input = 1;
+            }
+            else { throw NotIntegerValueException(); return result; }
+        }
+        catch (NotIntegerValueException)
+        {
+            NotIntegerValueException error;
+            result = error.Print(valid_input) + "Your value is: " + input + "\r\n";
+        }
+        return result;
+    };
+
+    System::String^ validate_value(System::String^ input, bool& valid_input) {
         int tmp_value;
         System::String^ result = "";
         try {
@@ -61,4 +80,5 @@ namespace Custom
         }
         return result;
     };
+
 }

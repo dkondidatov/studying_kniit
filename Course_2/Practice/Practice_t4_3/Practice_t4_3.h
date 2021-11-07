@@ -197,6 +197,7 @@ namespace Practicet43 {
 			this->btn_calculate_even_elem->TabIndex = 10;
 			this->btn_calculate_even_elem->Text = L"Calculate";
 			this->btn_calculate_even_elem->UseVisualStyleBackColor = true;
+			this->btn_calculate_even_elem->Click += gcnew System::EventHandler(this, &Practice_t4_3::btn_calculate_even_elem_Click);
 			// 
 			// txtb_x
 			// 
@@ -286,13 +287,18 @@ namespace Practicet43 {
 	private: System::Void btn_add_rows_Click(System::Object^ sender, System::EventArgs^ e) {
 		int to_add_rows = 1;																		//Initialize count of adding rows
 		bool valid_input = 0;																		//Validation bool
-		txtb_result->Text = Custom::parse_int_input(txtb_add_rows->Text, to_add_rows, valid_input); //Parsing txtb_add_rows to int or throw exception
-		if (valid_input)																			//If parsing success
-		{
-			dgv_array->Rows->Add(to_add_rows);														//Adding Rows
-			for (int i = dgv_array->Rows->Count - to_add_rows; i < dgv_array->Rows->Count; i++) {   //Fulling new Rows with 0 value
-				dgv_array->Rows[i]->Cells[0]->Value = 0;
+		if (txtb_add_rows->Text != "") {
+			txtb_result->Text = Custom::parse_int_input(txtb_add_rows->Text, to_add_rows, valid_input); //Parsing txtb_add_rows to int or throw exception
+			if (valid_input)																			//If parsing success
+			{
+				dgv_array->Rows->Add(to_add_rows);														//Adding Rows
+				for (int i = dgv_array->Rows->Count - to_add_rows; i < dgv_array->Rows->Count; i++) {   //Fulling new Rows with 0 value
+					dgv_array->Rows[i]->Cells[0]->Value = 0;
+				}
 			}
+		}
+		else {
+			txtb_result->Text = "Empty count to add. \r\n";
 		}
 		txtb_add_rows->Text = "1";																	//Reset txtb_add_rows text to 1
 	}
@@ -300,21 +306,26 @@ namespace Practicet43 {
 		   //Procedure for deleting rows from DataGridView
 	private: System::Void btn_delete_rows_Click(System::Object^ sender, System::EventArgs^ e) {
 		int to_delele_rows = 1;																		//Initialize count of adding rows
-		bool valid_input = 0;																		//Validation bool																		//Enable bool for CellValueChanged procedure that exclude value validation
-		txtb_result->Text = Custom::parse_int_input(txtb_delete_rows->Text, to_delele_rows, valid_input);//Parsing txtb_delete_rows to int or throw exception
-		if (valid_input)																			//If parsing success
-		{
-			if (dgv_array->Rows->Count != 0)														//If DataGridView is not empty
+		bool valid_input = 0;																		//Validation bool
+		if (txtb_delete_rows->Text != "") {
+			txtb_result->Text = Custom::parse_int_input(txtb_delete_rows->Text, to_delele_rows, valid_input);//Parsing txtb_delete_rows to int or throw exception
+			if (valid_input)																			//If parsing success
 			{
-				int previous_count = dgv_array->Rows->Count;										//'Deleting rows from' value
-				int wanted_count = dgv_array->Rows->Count - to_delele_rows;							//'Deleting rows to' value
-				for (int i = previous_count - 1; i > wanted_count - 1; i--) {
-					dgv_array->Rows->RemoveAt(i);													//Remove rows from end to wanted_count
+				if (dgv_array->Rows->Count != 0)														//If DataGridView is not empty
+				{
+					int previous_count = dgv_array->Rows->Count;										//'Deleting rows from' value
+					int wanted_count = dgv_array->Rows->Count - to_delele_rows;							//'Deleting rows to' value
+					for (int i = previous_count - 1; i > wanted_count - 1; i--) {
+						dgv_array->Rows->RemoveAt(i);													//Remove rows from end to wanted_count
+					}
+				}
+				else {
+					txtb_result->Text = "Array already empty." + "\r\n";								//If 0 rows then show message
 				}
 			}
-			else {
-				txtb_result->Text = "Array already empty." + "\r\n";								//If 0 rows then show message
-			}
+		}
+		else {
+			txtb_result->Text = "Empty count to delete. \r\n";
 		}
 		txtb_delete_rows->Text = "1";																//Reset txtb_add_rows text to 1
 	}
@@ -331,7 +342,7 @@ namespace Practicet43 {
 				dgv_array[e->ColumnIndex, e->RowIndex]->Value = temp;							//Setting trimmed string as Cell value
 			}
 			if (temp[0] != '0') {																//If cell value is not default do 
-				txtb_result->Text = Custom::validate_cell_value(dgv_array[e->ColumnIndex, e->RowIndex]->Value->ToString(), valid_input); //Validating cell value
+				txtb_result->Text = Custom::validate_value(dgv_array[e->ColumnIndex, e->RowIndex]->Value->ToString(), valid_input); //Validating cell value
 				if (!valid_input)																//If cell value not valid set value to default
 					dgv_array[e->ColumnIndex, e->RowIndex]->Value = 0;
 			}
@@ -366,12 +377,60 @@ namespace Practicet43 {
 				txtb_x->Text = txtb_x->Text->Remove(0, 1);										//Remove first zero symbol
 			}
 		}
-	}	
-		   
+	}
+
 		   //Procedure for calculate sum of odd elements less than X
 	private: System::Void btn_calculete_sum_Click(System::Object^ sender, System::EventArgs^ e) {
+		int x, buff = 0;																		//Init X and buffer variable
+		int sum = 0;																			//Init sum variable
+		bool valid_input = 1;																	//Init valid_input variable for validating input
+		bool odd_elements_exist = 0;															//Init odd_elements_exist variable for check odd elements existing
+		if (txtb_x->Text != "") {																//If X not empty
+			txtb_result->Text = Custom::validate_value(txtb_x->Text, x, valid_input);			//Parse txtb_x text and get X
+			if (valid_input) {																	//If input is valid
+				if (dgv_array->Rows->Count > 0) {												//And if array not empty
+					for (int i = 0; i < dgv_array->Rows->Count; i++) {							//For all rows in array
+						buff = Convert::ToInt32(dgv_array[0, i]->Value);						//Cashing value in buffer
+						if ((buff != 0) && (buff < x) && (buff % 2 != 0)) {						//If buffer is odd and less X
+							sum += buff;														//Sum
+							odd_elements_exist = 1;												//Set odd_elements_exist to true
+						}
+					}
+					if (odd_elements_exist)														//If odd elements exist show sum
+						txtb_result->Text = "Sum of odd elements less than X = " + x + " is " + sum + "\r\n";
+					else
+					{
+						txtb_result->Text = "Odd elements does not exist. \r\n";				//If odd elements doesn't exist show message
+					}						
+				}
+				else {
+					txtb_result->Text = "Array is empty. \r\n";									//If array empty show message
+				}
+			}
+		}
+		else {
+			txtb_result->Text = "Empty X. \r\n";												//If X empty show message
+		}
+		txtb_x->Text = "1";																		//Reset X to default
+	}
 
+		   //Procedure for finding max even element
+	private: System::Void btn_calculate_even_elem_Click(System::Object^ sender, System::EventArgs^ e) {
+		int buff = 0;																			//Initialize buffer variable
+		int max_even = 0;																		//Initialize max_even variable
 
+		if (dgv_array->Rows->Count > 0)															//If array not empty
+		{
+			for (int i = 0; i < dgv_array->Rows->Count; i++) {									//For all elements in array
+				buff = Convert::ToInt32(dgv_array[0, i]->Value);								//Cashing converted to Int value in buffer
+				if ((buff != 0) && (buff % 2 == 0) && (buff > max_even))						//If value even and bigger that max
+					max_even = buff;															//Set buffer as max
+			}
+			txtb_result->Text = "Max event element is " + max_even + "\r\n";					//Show max value
+		}
+		else {
+			txtb_result->Text = "Array is empty. \r\n";											//If array empty show message
+		}
 	}
 };
 }
