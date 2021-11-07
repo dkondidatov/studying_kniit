@@ -10,7 +10,7 @@ namespace Practicet53 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	int row_value = 0;
+	int max_size = 100;
 
 	/// <summary>
 	/// Summary for Practice_t5_3
@@ -286,20 +286,25 @@ namespace Practicet53 {
 			txtb_result->Text = Custom::parse_int_input(txtb_add_columns->Text, to_add_columns, valid_input);	//Parsing txtb_add_rows to int or throw exception
 			if (valid_input)																					//If parsing success
 			{
-				dgv_first->ColumnCount = dgv_first->ColumnCount + to_add_columns;								//Adding Rows
-				dgv_second->ColumnCount = dgv_second->ColumnCount + to_add_columns;								//Adding Rows
+				if (dgv_first->Columns->Count + to_add_columns < max_size) {										//Max size checking
+					dgv_first->ColumnCount = dgv_first->ColumnCount + to_add_columns;								//Adding Rows
+					dgv_second->ColumnCount = dgv_second->ColumnCount + to_add_columns;								//Adding Rows
 
-				if (dgv_first->Rows->Count == 0)																//If Rows count = 0 add row
-					dgv_first->Rows->Add(1);
-				if (dgv_second->Rows->Count == 0)																//If Rows count = 0 add row
-					dgv_second->Rows->Add(1);
+					if (dgv_first->Rows->Count == 0)																//If Rows count = 0 add row
+						dgv_first->Rows->Add(1);
+					if (dgv_second->Rows->Count == 0)																//If Rows count = 0 add row
+						dgv_second->Rows->Add(1);
 
-				for (int i = dgv_first->Columns->Count - to_add_columns; i < dgv_first->Columns->Count; i++) {	//Fulling new Rows with value
-					for (int j = 0; j < dgv_first->Rows->Count; j++) {
+					for (int i = dgv_first->Columns->Count - to_add_columns; i < dgv_first->Columns->Count; i++) {	//Fulling new Rows with value
+						for (int j = 0; j < dgv_first->Rows->Count; j++) {
 
-						dgv_first->Rows[j]->Cells[i]->Value = j + 1;
-						dgv_second->Rows[j]->Cells[i]->Value = j + 1;
+							dgv_first->Rows[j]->Cells[i]->Value = j + 1;
+							dgv_second->Rows[j]->Cells[i]->Value = j + 1;
+						}
 					}
+				}
+				else {
+					txtb_result->Text = "Max size reached. Max columns count: " + max_size + " \r\n";
 				}
 			}
 		}
@@ -338,25 +343,31 @@ namespace Practicet53 {
 	}
 
 		   //Add rows
-	private: System::Void btn_add_rows_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void btn_add_rows_Click(System::Object^ sender, System::EventArgs^ e) {			//Max size checking
 		int to_add_rows = 1;																			//Initialize count of adding rows
 		bool valid_input = 0;																			//Validation bool
 		if (txtb_add_rows->Text != "") {																//If txtb_add_rows not empty do
 			txtb_result->Text = Custom::parse_int_input(txtb_add_rows->Text, to_add_rows, valid_input); //Parsing txtb_add_rows to int or throw exception
 			if (valid_input)																			//If parsing success
 			{
-				if (dgv_first->ColumnCount == 0)														//If columns doesn't exist
-					dgv_first->ColumnCount = 1;															//Set 1 column
-				if (dgv_second->ColumnCount == 0)														//If columns doesn't exist
-					dgv_second->ColumnCount = 1;														//Set 1 column
+				if (dgv_first->Rows->Count + to_add_rows < max_size) {
+					if (dgv_first->ColumnCount == 0)														//If columns doesn't exist
+						dgv_first->ColumnCount = 1;															//Set 1 column
+					if (dgv_second->ColumnCount == 0)														//If columns doesn't exist
+						dgv_second->ColumnCount = 1;														//Set 1 column
 
-				dgv_first->Rows->Add(to_add_rows);														//Adding Rows
-				dgv_second->Rows->Add(to_add_rows);														//Adding Rows
-				for (int i = dgv_first->Rows->Count - to_add_rows; i < dgv_first->Rows->Count; i++) {   //Fulling new Rows with value
-					for (int j = 0; j < dgv_first->Columns->Count; j++) {
-						dgv_first->Rows[i]->Cells[j]->Value = dgv_first->Rows->Count;
-						dgv_second->Rows[i]->Cells[j]->Value = dgv_second->Rows->Count;
+					dgv_first->Rows->Add(to_add_rows);														//Adding Rows
+					dgv_second->Rows->Add(to_add_rows);														//Adding Rows
+					for (int i = dgv_first->Rows->Count - to_add_rows; i < dgv_first->Rows->Count; i++) {   //Fulling new Rows with value
+						for (int j = 0; j < dgv_first->Columns->Count; j++) {
+							dgv_first->Rows[i]->Cells[j]->Value = dgv_first->Rows->Count;
+							dgv_second->Rows[i]->Cells[j]->Value = dgv_second->Rows->Count;
+						}
 					}
+				}
+				else
+				{
+					txtb_result->Text = "Max size reached. Max columns count: " + max_size + " \r\n";
 				}
 			}
 		}
